@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EnergyManager : MonoBehaviour
 {
-	private int Energy;
+	private int _energy;
 
 	public Text EnergyDisplay;
 	
@@ -30,31 +30,31 @@ public class EnergyManager : MonoBehaviour
 			AlterEnergy(-1);
 		}
 
-		EnergyDisplay.text = string.Format(@"Energy: {0}", Energy);
+		EnergyDisplay.text = string.Format(@"Energy: {0}", _energy);
 	}
 
 	public int GetEnergy()
 	{
-		return Energy;
+		return _energy;
 	}
 
 	public void AlterEnergy(int amount)
 	{
-		Energy += amount;
+		_energy += amount;
 		ClampToPositive();
 	}
 
 	private void ClampToPositive()
 	{
-		if (Energy < 0)
+		if (_energy < 0)
 		{
-			Energy = 0;
+			_energy = 0;
 		}
 	}
 
 	public void SetEnergy(int level)
 	{
-		Energy = level;
+		_energy = level;
 		ClampToPositive();
 	}
 }

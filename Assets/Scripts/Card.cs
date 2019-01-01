@@ -11,10 +11,11 @@ namespace Inspire
     public class Card : MonoBehaviour
     {
         
-        private string Name;
+        public string Name;
         private CardType Type;
-        private List<CardEffect> Effects;
+        private List<GameEffect> Effects;
         private int BaseCost;
+        private string CardText; // this will probably need to be provided by a function eventually  
 
         // position handling - could move to another class
         private Vector3 _targetPosition;
@@ -26,15 +27,27 @@ namespace Inspire
                             // but need to set rendering order, so might as well 
                             // store it?
         private SpriteRenderer _renderer;
-        private TextMeshPro _costDisplay;
+        public TextMeshPro _costDisplay;
+        public TextMeshPro _nameDisplay;
+        public TextMeshPro _textDisplay;
+
+        private HandManager _handManager;
+        private TargetManager _targetManager;
         
-        private void Start()
+        private void Awake()
         {
             _renderer = GetComponent<SpriteRenderer>();
-            _costDisplay = GetComponentInChildren<TextMeshPro>();
+            //_costDisplay = GetComponentInChildren<TextMeshPro>();
+            _handManager = FindObjectOfType<HandManager>();
+            _targetManager = FindObjectOfType<TargetManager>();
             
             // for now, assign a random cost between 0 and 4
             BaseCost = Random.Range(0, 5);
+            Name = "Card name of reasonable length";
+
+            CardText = @"This will potentially be very long. This should look reasonable.
+
+Line breaks will also need to be handled.";
 
             _targetPosition = transform.position;
         }
@@ -73,18 +86,69 @@ namespace Inspire
             transform.Rotate(0,0,newAngle);
         }
 
-        public void SetPositionInfo(float x, float y, float angle, int index)
+        public void SetPositionInfo(float x, float y, float angle, int index, bool isSelected)
         {
             _targetPosition = new Vector3(x,y,0);
             _targetAngle = angle;
             _index = index;
-            _renderer.sortingOrder = index * 10;
-            _costDisplay.sortingOrder = index * 10 + 1;
+
+            if (isSelected)
+            {
+                transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+                _renderer.sortingOrder = 1000;
+                _costDisplay.sortingOrder = 1001;
+                _nameDisplay.sortingOrder = 1001;
+                _textDisplay.sortingOrder = 1001;
+            }
+            else
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                _renderer.sortingOrder = index * 10;
+                _costDisplay.sortingOrder = index * 10 + 1;
+                _nameDisplay.sortingOrder = index * 10 + 1;
+                _textDisplay.sortingOrder = index * 10 + 1;
+            }
         }
 
         public int GetCost()
         {
             return BaseCost;
+        }
+
+        public string GetText()
+        {
+            // do manipulations here e.g. when card is being played, substitute symbols "1/laser fighter" with actual
+            return CardText;
+        }
+        
+        private void OnMouseEnter()
+        {
+            if (_targetManager.TargetingModeActive == false)
+            {
+                _handManager.SetSelected(_index);
+            }
+        }
+
+        private void OnMouseExit()
+        {
+            if (_targetManager.TargetingModeActive == false)
+            {
+                _handManager.ClearSelected();
+            }
+        }
+
+        private void OnMouseDrag()
+        {
+            _targetManager.ActivateTargetingMode();
+        }
+
+        private void OnMouseUp()
+        {
+            // if this ia playable and target is valid, play the card
+            
+            // reset for next card
+            _targetManager.DeactivateTargetingMode();
+            _handManager.ClearSelected();
         }
     }
 }

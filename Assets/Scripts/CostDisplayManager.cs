@@ -10,7 +10,7 @@ public class CostDisplayManager : MonoBehaviour
 	private TextMeshPro _text;
 	
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 		_card = GetComponentInParent<Card>();
 		_text = GetComponent<TextMeshPro>();

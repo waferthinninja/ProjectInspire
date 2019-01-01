@@ -9,7 +9,7 @@ public class PlayableChecker : MonoBehaviour
 	private Card _card;
 	private EnergyManager _energyManager;
 	private SpriteRenderer _renderer;
-	private GamePhaseManager _gamePhaseManager;
+	private GameManager _gamePhaseManager;
 	
 	// Use this for initialization
 	void Start ()
@@ -17,7 +17,7 @@ public class PlayableChecker : MonoBehaviour
 		_card = GetComponent<Card>();
 		_energyManager = FindObjectOfType<EnergyManager>();
 		_renderer = GetComponent<SpriteRenderer>();
-		_gamePhaseManager = FindObjectOfType<GamePhaseManager>();
+		_gamePhaseManager = FindObjectOfType<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -45,12 +45,12 @@ public class PlayableChecker : MonoBehaviour
 
 	private void SetPlayable()
 	{
-		_renderer.color = Color.green;
+		_renderer.color = new Color(0.8f,0.9f,0.8f);
 	}
 
 	private void SetUnplayable()
 	{
 		
-		_renderer.color = Color.red;
+		_renderer.color = new Color(0.8f,0.7f,0.7f);
 	}
 }

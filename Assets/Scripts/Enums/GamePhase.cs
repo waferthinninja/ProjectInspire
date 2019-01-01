@@ -2,6 +2,7 @@
 {
     public enum GamePhase
     {
+        Setup,
         PlayerTurn,
         EnemyTurn
     }

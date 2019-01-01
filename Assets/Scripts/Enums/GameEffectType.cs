@@ -1,6 +1,6 @@
 ﻿namespace Inspire
 {
-    public enum CardEffectType
+    public enum GameEffectType
     {
         BasicDamage
     }

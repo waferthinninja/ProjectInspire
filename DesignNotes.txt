@@ -1,0 +1,70 @@
+Project Inspire design notes
+
+A single player deck building game inspired by Slay the Spire. 
+
+Thematically it will be very different - the player will command a carrier battling other spaceships in a hostile universe.
+
+The player will advance through a strategic level towards an overall objective to defeat the big end game boss. Along the way the main activity will be fighting battles against groups of enemy spaceships. Each battle will be a tactical card battle, where the player must use a deck of cards to initiate attacks and power up defences. 
+
+Strategic game level
+This will be somewhat like FTL, with a series of nodes connected together by lines (or possibly there will be no lines and travel will simply be limited by range?). Most nodes will contain battles, but some might be friendly (cf shops in StS), some might contain mysteries (cf "?" nodes in StS) where the player might have to make choices. 
+
+Rewards for battles will be upgrades to the carrier, new fighter blueprints, and of course cards to add to the players deck. 
+
+Unlike StS, the player will be free to roam amongst the nodes encountering what he wants, while the Big Bad is doing the same. The big bad will launch elite captains (cf end of level bosses in StS) at set intervals, so the longer the player takes the more of these he must face. Also the big bad is destroying worlds as he goes, so the players ultimate score will be higher the quicker he manages to defeat the boss. 
+
+Tactical level game
+The player has a carrier which can create different types of fighter, and a hand of cards drawn from his deck. At the start of a battle no fighters are launched. The player accumulates Command Points each round (which carry over between turns) which are spent to launch fighters. There will be multiple fighter types available, with the player able to gain new blueprints as rewards during the strategic game. The player has slots which limit the number of fighters which can be launched at once. 
+
+The player also has energy which renews at the start of each turn but does not carry over between turns. This energy is used to play cards. Most cards (at least those that do damage?) will require fighters to be in play in order to work effectively. For example, a "Missile blast" card might do damage for each missile fighter in play. 
+
+Enemies will signify intent as per StS. Some enemies might attack the carrier directly, others might target the fighters, others might perform buff or debuff actions.
+
+
+Idea - the big bad is corrupting things, so the enemies you face will be corrupted versions of the local spaceships. Once the corrupted ships are defeated the locals will tend to offer rewards of their own ship designs. That way you can have areas dominated by certain types of ship, so the player can choose a path that fights the type of ships he wants, or to get the right type of ship to tackle the next area. 
+
+
+Upgrade ideas
+Recycler - use to retain a card for the next turn
+Trash cannon - discard cards into this to do damage
+Spinal cannon - charges slowly, does a big chunk of damage every X turns
+
+
+Fighter ideas
+Each fighter will have one or more icons used to power the basic attacks (Laser, Missile, Plasma)
+Some could also have effects whilst in play
+	- increased energy
+	- do damage each round
+	- create a point of shield each round
+	-  
+
+
+
+Card ideas
+Basic types of attack card
+	- laser: vanilla attack just does damage
+	- missile: more damage, but can be completely countered by ECM
+	- plasma: ignore shields? 
+Defensive cards
+	- shields: protect against most damage, only lasts the round
+	- armour: protect against all damage, persistant
+	- ECM: counter missile attacks
+
+Rapid fire weapon - goes to top of the deck after playing
+All power to shields - big defence, discard all attacks
+Evasive maneuver - cancel an attack targetting a fighter
+Fire beam/missiles - causes damage over time
+Nanites - remove nagative conditions (such as being on fire)
+Attack pattern delta - for the rest of the turn, all laser damage hits all enemies
+
+
+Other ideas
+Terrain - fighting in nebulae, dust clouds, wibbly wobbly space fields and the like can have a number of effects that last the whole battle.
+	- more/less energy
+	- reduced fighter slots
+	- fighters cost more to launch
+	- certain weapon types do more/less damage
+	- ECM doesnt work
+	- draw more/less cards
+	- increased/decreased max hand size
+Obv some of these effects would only affect the player, so should be balanced with some similar effect on the enemy? Maybe not, perhaps they can be meant as a deterrant

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Inspire
 {
@@ -14,6 +16,11 @@ namespace Inspire
 		public float TotalAngle;
 		public float Radius;
 
+		private void Start()
+		{
+			_selectedIndex = -999;
+		}
+		
 		private void Update()
 		{
 			// should prob only do this when something changes, but for now...
@@ -62,6 +69,28 @@ namespace Inspire
 					_angles[(_cards.Length / 2) - (i + 1)] = -(angleBetweenCards / 2) - angleBetweenCards * i;
 				}
 			}
+			
+			// if a card is selected, move adjacent cards a bit
+			if (_selectedIndex > 0)
+			{
+				_angles[_selectedIndex - 1] -= PreferredAngle / 4f;
+			}
+
+			if (_selectedIndex >= 0 && _selectedIndex < _cards.Length - 1)
+			{
+				_angles[_selectedIndex + 1] += PreferredAngle / 4f;
+			}
+			
+			if (_selectedIndex > 1)
+			{
+				_angles[_selectedIndex - 2] -= PreferredAngle / 8f;
+			}
+
+			if (_selectedIndex >= 0 && _selectedIndex < _cards.Length - 2)
+			{
+				_angles[_selectedIndex + 2] += PreferredAngle / 8f;
+			}
+			
 		}
 		
 		private void SetTargetPositions()
@@ -71,12 +100,32 @@ namespace Inspire
 			for (int i = 0; i < _cards.Length; i++)
 			{
 				_cards[i].SetPositionInfo(transform.position.x + (Radius * Mathf.Sin(_angles[i] * Mathf.Deg2Rad)),
-				                            center.y + (Radius * Mathf.Cos(_angles[i] * Mathf.Deg2Rad)),
-					                        -_angles[i],
-											i);
+				                            (_selectedIndex == i ? center.y + Radius + 0.5f : 
+					                                               center.y + (Radius * Mathf.Cos(_angles[i] * Mathf.Deg2Rad))),
+											(_selectedIndex == i ? 0 : -_angles[i]),
+											i,
+											_selectedIndex == i);
 				
 			}
 
+		}
+
+		public void SetSelected(int index)
+		{
+			_selectedIndex = index;
+		}
+
+		public void ClearSelected()
+		{
+			_selectedIndex = -999;
+		}
+
+		[CanBeNull]
+		public Card GetSelectedCard()
+		{
+			if (_selectedIndex < 0) return null;
+
+			return _cards[_selectedIndex];
 		}
 	}
 

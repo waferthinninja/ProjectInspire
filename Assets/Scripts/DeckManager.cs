@@ -1,23 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Inspire
 {
 	// responsible for keeping track of the cards in a pile, shuffling and serving them up
 	public class DeckManager : MonoBehaviour
 	{
-		private HandManager HandManager;
+		private HandManager _handManager;
+		
+		public TextMeshPro CardCounter;
 
-		private void Start()
+		private void Awake()
 		{
-			HandManager = FindObjectOfType<HandManager>();
+			_handManager = FindObjectOfType<HandManager>();
 			
+
 		}
 
 		private void Update()
 		{
+			// should prob not do this here but for now
+			CardCounter.sortingOrder = 2001;
+			CardCounter.text = GetComponentsInChildren<Card>().Length.ToString();
+			
 			if (Input.GetKeyDown(KeyCode.D))
 			{
 				DrawCard();
@@ -30,7 +39,7 @@ namespace Inspire
 
 			if (card != null)
 			{
-				card.transform.SetParent(HandManager.transform);
+				card.transform.SetParent(_handManager.transform);
 			}
 
 		}
