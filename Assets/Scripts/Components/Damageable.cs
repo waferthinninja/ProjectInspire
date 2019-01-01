@@ -14,7 +14,7 @@ namespace Inspire.Components
             CurrentHealth = MaxHealth;
         }
 
-        private void ChangeHealth(int delta)
+        public void ChangeHealth(int delta)
         {
             CurrentHealth = (CurrentHealth + delta).Clamp(0, MaxHealth);
         }

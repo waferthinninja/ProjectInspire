@@ -6,7 +6,9 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Card.cs" t="Include" />
+          <e p="CardMovementManager.cs" t="Include" />
           <e p="CardNameDisplayManager.cs" t="Include" />
+          <e p="CardPlayManager.cs" t="Include" />
           <e p="CardTextDisplayManager.cs" t="Include" />
           <e p="Carrier.cs" t="Include" />
           <e p="CommandPointManager.cs" t="Include" />
@@ -23,6 +25,7 @@
             <e p="CardType.cs" t="Include" />
             <e p="GameEffectType.cs" t="Include" />
             <e p="GamePhase.cs" t="Include" />
+            <e p="TargetType.cs" t="Include" />
           </e>
           <e p="ExtensionMethods" t="Include">
             <e p="ExtensionMethods.cs" t="Include" />
@@ -30,7 +33,11 @@
           <e p="Fighter.cs" t="Include" />
           <e p="FighterLayoutManager.cs" t="Include" />
           <e p="FighterSpawner.cs" t="Include" />
-          <e p="GameEffect.cs" t="Include" />
+          <e p="GameEffects" t="Include">
+            <e p="BasicDamageEffect.cs" t="Include" />
+            <e p="DamageableTargetEffect.cs" t="Include" />
+            <e p="GameEffect.cs" t="Include" />
+          </e>
           <e p="GameManager.cs" t="Include" />
           <e p="HandManager.cs" t="Include" />
           <e p="PlayableChecker.cs" t="Include" />

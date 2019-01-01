@@ -99,7 +99,7 @@ namespace Inspire
 	
 			for (int i = 0; i < _cards.Length; i++)
 			{
-				_cards[i].SetPositionInfo(transform.position.x + (Radius * Mathf.Sin(_angles[i] * Mathf.Deg2Rad)),
+				_cards[i].GetMovementManager().SetPositionInfo(transform.position.x + (Radius * Mathf.Sin(_angles[i] * Mathf.Deg2Rad)),
 				                            (_selectedIndex == i ? center.y + Radius + 0.5f : 
 					                                               center.y + (Radius * Mathf.Cos(_angles[i] * Mathf.Deg2Rad))),
 											(_selectedIndex == i ? 0 : -_angles[i]),

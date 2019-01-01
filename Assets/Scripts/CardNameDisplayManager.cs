@@ -16,7 +16,7 @@ namespace Inspire
 
 	    void Update()
 	    {
-		    _text.text = _card.Name;
+		    _text.text = _card.GetName();
 	    }
     }
 }
