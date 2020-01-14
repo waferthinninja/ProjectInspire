@@ -5,22 +5,17 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
-          <e p="Card.cs" t="Include" />
-          <e p="CardMovementManager.cs" t="Include" />
-          <e p="CardNameDisplayManager.cs" t="Include" />
-          <e p="CardPlayManager.cs" t="Include" />
-          <e p="CardTextDisplayManager.cs" t="Include" />
-          <e p="Carrier.cs" t="Include" />
-          <e p="CommandPointManager.cs" t="Include" />
+          <e p="Cards" t="Include">
+            <e p="Card.cs" t="Include" />
+          </e>
           <e p="Components" t="Include">
             <e p="Damageable.cs" t="Include" />
+            <e p="PotentialTarget.cs" t="Include" />
           </e>
-          <e p="CostDisplayManager.cs" t="Include" />
-          <e p="DamageDisplayManager.cs" t="Include" />
-          <e p="DeckManager.cs" t="Include" />
-          <e p="Enemy.cs" t="Include" />
-          <e p="EnemyLayoutManager.cs" t="Include" />
-          <e p="EnergyManager.cs" t="Include" />
+          <e p="Enemies" t="Include">
+            <e p="Enemy.cs" t="Include" />
+            <e p="ExampleEnemy.cs" t="Include" />
+          </e>
           <e p="Enums" t="Include">
             <e p="CardType.cs" t="Include" />
             <e p="GameEffectType.cs" t="Include" />
@@ -30,20 +25,46 @@
           <e p="ExtensionMethods" t="Include">
             <e p="ExtensionMethods.cs" t="Include" />
           </e>
-          <e p="Fighter.cs" t="Include" />
-          <e p="FighterLayoutManager.cs" t="Include" />
-          <e p="FighterSpawner.cs" t="Include" />
+          <e p="Fighters" t="Include">
+            <e p="Fighter.cs" t="Include" />
+            <e p="FighterSpawner.cs" t="Include" />
+          </e>
           <e p="GameEffects" t="Include">
+            <e p="BasicCarrierDamage.cs" t="Include" />
             <e p="BasicDamageEffect.cs" t="Include" />
+            <e p="BasicRandomFighterAttack.cs" t="Include" />
+            <e p="BasicShield.cs" t="Include" />
             <e p="DamageableTargetEffect.cs" t="Include" />
+            <e p="GainEnergyEffect.cs" t="Include" />
             <e p="GameEffect.cs" t="Include" />
           </e>
-          <e p="GameManager.cs" t="Include" />
-          <e p="HandManager.cs" t="Include" />
-          <e p="PlayableChecker.cs" t="Include" />
-          <e p="PotentialTarget.cs" t="Include" />
-          <e p="TargetLineManager.cs" t="Include" />
-          <e p="TargetManager.cs" t="Include" />
+          <e p="Interface" t="Include">
+            <e p="CardCounter.cs" t="Include" />
+            <e p="CardNameDisplayManager.cs" t="Include" />
+            <e p="CardTextDisplayManager.cs" t="Include" />
+            <e p="CostDisplayManager.cs" t="Include" />
+            <e p="DamageDisplayManager.cs" t="Include" />
+            <e p="ShieldDisplayManager.cs" t="Include" />
+            <e p="VisibilityManager.cs" t="Include" />
+          </e>
+          <e p="Singletons" t="Include">
+            <e p="CardMovementManager.cs" t="Include" />
+            <e p="CardPile.cs" t="Include" />
+            <e p="CardPlayManager.cs" t="Include" />
+            <e p="Carrier.cs" t="Include" />
+            <e p="CommandPointManager.cs" t="Include" />
+            <e p="DeckManager.cs" t="Include" />
+            <e p="DiscardManager.cs" t="Include" />
+            <e p="EndTurnButton.cs" t="Include" />
+            <e p="EnemyManager.cs" t="Include" />
+            <e p="EnergyManager.cs" t="Include" />
+            <e p="FighterLayoutManager.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="HandManager.cs" t="Include" />
+            <e p="PlayableChecker.cs" t="Include" />
+            <e p="TargetLineManager.cs" t="Include" />
+            <e p="TargetManager.cs" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Examples &amp; Extras" t="Include">

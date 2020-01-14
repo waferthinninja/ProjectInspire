@@ -15,7 +15,7 @@ namespace Inspire
         public override void DoEffect()
         {
             TargetManager targetManager = FindObjectOfType<TargetManager>();
-            targetManager.GetTarget().GetComponentInParent<Damageable>().ChangeHealth(-Damage);
+            targetManager.GetTarget().GetComponentInParent<Damageable>().ApplyDamage(Damage);
         }
     }
 }
